@@ -1,0 +1,27 @@
+server:
+  port: 5000
+spring:
+  application:
+    name: micro-authorize-server
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://ubuntu1804.wsl:5432/micro_base_server
+    username: postgres
+    password: admin
+    hikari:
+      minimum-idle: 5
+      idle-timeout: 600000
+      maximum-pool-size: 10
+      pool-name: HikariCP
+      max-lifetime: 1800000
+      connection-timeout: 3000
+      connection-test-query: SELECT 1
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+logging:
+  level:
+    io.ebean.SQL: trace
