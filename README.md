@@ -24,6 +24,12 @@ A base project for micro.
     ```
 4. 启动项目
 
+### RSA 密钥
+可以使用 jdk 自带的 keytool 生成
+```
+ keytool -genkey -alias jwt -keyalg RSA -keystore jwt.jks
+```
+
 ### micro-resource-server 项目
 资源服务 demo
 

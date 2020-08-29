@@ -29,7 +29,9 @@ class JwtTokenConfig {
     @Bean
     fun keyPair(): KeyPair {
         // TODO 当前每次启动生成，应该从其它途径获取 (如数据库)
-        val rsa = SecureUtil.rsa()
-        return KeyPair(rsa.publicKey, rsa.privateKey)
+//        val rsa = SecureUtil.rsa()
+//        return KeyPair(rsa.publicKey, rsa.privateKey)
+        val keyStoreKeyFactory = KeyStoreKeyFactory(ClassPathResource("jwt.jks"), "123456".toCharArray())
+        return keyStoreKeyFactory.getKeyPair("jwt")
     }
 }
