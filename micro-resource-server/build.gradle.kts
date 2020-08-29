@@ -5,5 +5,4 @@ dependencies {
     // security oauth2
     implementation("org.springframework.security:spring-security-oauth2-resource-server")
     implementation("org.springframework.security:spring-security-oauth2-jose")
-    implementation("org.springframework.security:spring-security-oauth2-client")
 }
